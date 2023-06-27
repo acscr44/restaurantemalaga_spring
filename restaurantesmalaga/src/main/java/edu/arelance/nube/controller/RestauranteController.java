@@ -1,5 +1,7 @@
 package edu.arelance.nube.controller;
 
+import java.time.LocalDateTime;
+
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +28,7 @@ import edu.arelance.nube.repository.entity.Restaurante;
 
 
 //@Controller //Devolvemos una vista  (html/jsp)
-@RestController  //Devolvemos JSON
+@RestController  //Devolvemos JSON  // Subtipo de @Controller
 @RequestMapping("/restaurante")  // Para mejor orientación de Spring, le indicamos que todo lo que va a dicha URL es para esta clase Controller (restaurantesmalaga)
 public class RestauranteController {
 
@@ -34,7 +36,10 @@ public class RestauranteController {
 		public Restaurante obtenerRestauranteTest() {
 			Restaurante restaurante = null;
 			
-			System.out.println("Llamando a obtenerRestauranteTest");
+				System.out.println("Llamando a obtenerRestauranteTest");
+				restaurante = new Restaurante(1l, "Martinete", "Carlos Haya 33", "Carranque", "https://www.mesonelmartinete.es/", "https://goo.gl/maps/526RFvXpxCkYQ7T69", 36.72f, -4.44f, 10, "gazpachuelo", "paella", "sopa de marisco", LocalDateTime.now());
+			
+			
 			return restaurante;
 		}
 }
