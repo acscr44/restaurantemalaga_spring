@@ -2,6 +2,7 @@ package edu.arelance.nube.service;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,7 +12,7 @@ import edu.arelance.nube.repository.entity.Restaurante;
 @Service
 public class RestauranteServiceImpl implements RestauranteService {
 
-	
+	@Autowired
 	RestauranteRepository restauranteRepository;
 		
 	@Override
