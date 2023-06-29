@@ -3,6 +3,8 @@ package edu.arelance.nube.controller;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,11 +47,14 @@ public class RestauranteController {
 	@Autowired // Inyección de dependencias
 	RestauranteService restauranteService;
 
+	Logger logger = LoggerFactory.getLogger(RestauranteController.class);
+		
 	@GetMapping("/test") // GET http://localhost:8081/restaurante/test
 	public Restaurante obtenerRestauranteTest() {
 		Restaurante restaurante = null;
 
 		System.out.println("Llamando a obtenerRestauranteTest");
+		logger.debug("estoy en obtenerRestauranteTest");
 		restaurante = new Restaurante(1l, "Martinete", "Carlos Haya 33", "Carranque",
 				"https://www.mesonelmartinete.es/", "https://goo.gl/maps/526RFvXpxCkYQ7T69", 36.72f, -4.44f, 10,
 				"gazpachuelo", "paella", "sopa de marisco", LocalDateTime.now());
