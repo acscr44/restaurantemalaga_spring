@@ -1,5 +1,6 @@
 package edu.arelance.nube.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -89,6 +90,15 @@ public class RestauranteServiceImpl implements RestauranteService {
 //		
 //		return listaRestPrecioAcotado;
 		return this.restauranteRepository.findByPrecioBetween(preciomin, preciomax);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Restaurante> listarPorAlgunCriterioMultiple(String clave) {
+		Iterable<Restaurante> listaByAnyCriteria = null; 
+		
+		listaByAnyCriteria = this.restauranteRepository.buscarPorBarrioNombreOrEspecialidad(clave);
+		return listaByAnyCriteria;
 	}
 	
 }

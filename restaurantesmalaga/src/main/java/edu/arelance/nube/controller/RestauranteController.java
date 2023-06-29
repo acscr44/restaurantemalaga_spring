@@ -122,6 +122,19 @@ public class RestauranteController {
 		return  responseEntity;
 	}
 	
+	// GET 
+	@GetMapping("/searchByAny")
+	public ResponseEntity<?> listarPorAlgunCriterioMultiple(
+				@RequestParam(name = "clave") String clave){
+			ResponseEntity<?> responseEntity = null;
+			Iterable<Restaurante> iterRest = null;
+			iterRest = this.restauranteService.listarPorAlgunCriterioMultiple(clave);
+			responseEntity = ResponseEntity.ok(iterRest);
+		
+			return responseEntity;
+		
+	}
+	
 
 	// POST -> Insertar un restaurante nuevo. POST  http://localhost:8081/restaurante(Body Restaurante)
 	@PostMapping
