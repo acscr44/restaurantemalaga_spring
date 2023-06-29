@@ -11,7 +11,7 @@ public interface RestauranteService {
 	Optional<Restaurante> consultarRestaurante(Long id);
 	
 	Restaurante altaRestaurante(Restaurante restaurante);
-	// Este Restaurante nuevo-saliente tendrá que incorporar dos campos más, el id y la fechaCreación.
+	// Este Restaurante nuevo-saliente tendrá que incorporar dos campos más, el id y en creadoEn.
 	// Este Restaurante saliente ya será un registro nuevo en la BD.
 	
 	
@@ -20,6 +20,9 @@ public interface RestauranteService {
 	void borrarRestaurante(Restaurante rest);
 	
 	Optional<Restaurante> modificarRestaurante(Long id, Restaurante restaurante);
+
+	Iterable<Restaurante> encuentraPorPrecioAcotado(int preciomin, int preciomax);
+	
 	
 	
 	

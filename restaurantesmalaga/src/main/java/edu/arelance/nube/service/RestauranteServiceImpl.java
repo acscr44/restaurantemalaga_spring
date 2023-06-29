@@ -2,6 +2,7 @@ package edu.arelance.nube.service;
 
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,10 +56,39 @@ public class RestauranteServiceImpl implements RestauranteService {
 	}
 
 	@Override
-	@Transactional
+	@Transactional	// todos los setMethod realizados están bajo una operativa Transaccional.
 	public Optional<Restaurante> modificarRestaurante(Long id, Restaurante restaurante) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		Optional<Restaurante> opRest = Optional.empty();
+		// 1 Leer
+			opRest = this.restauranteRepository.findById(id);
+			if (opRest.isPresent()) {
+				// Al estar dentro de una transacción, restauranteLeido está asociado
+				// a un registro de la tabla. Si modifico un campo, estoy modificando
+				// la columna asociada (Estado "Persistent" - JPA Standard). 
+				Restaurante restauranteLeido = opRest.get();
+				// 2 Actualizar
+				// Si no existe, devolvemos un Optional vacío, así evitamos devolver un null. 
+				// 		De recorrer ese null, obtendríamos un nullpointexception.
+				// Podríamos ir seteando campo a campo
+				// 		restauranteLeido.setNombre(restaurante.getNombre());
+				// Pero lo haremos de otro modo más rápido.
+				BeanUtils.copyProperties(restaurante, restauranteLeido, "id", "creadoEn");
+				// Solo queda envolver este object_target en un Optional
+				opRest = Optional.of(restauranteLeido);  // "relleno el Optional"
+			}
+			
+			
+		return opRest;
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Restaurante> encuentraPorPrecioAcotado(int preciomin, int preciomax){
+//		Iterable<Restaurante> listaRestPrecioAcotado = this.restauranteRepository.findByPrecioBetween(preciomin, preciomax);
+//		
+//		return listaRestPrecioAcotado;
+		return this.restauranteRepository.findByPrecioBetween(preciomin, preciomax);
 	}
 	
 }

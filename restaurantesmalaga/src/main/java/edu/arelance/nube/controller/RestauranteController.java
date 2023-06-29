@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.arelance.nube.repository.entity.Restaurante;
@@ -64,8 +65,8 @@ public class RestauranteController {
 			
 		/*
 		 *  Gestión Automática de Excepciones (GestAutExc) */
-				String saludo = "HOLA";
-				saludo.charAt(10);
+//				String saludo = "HOLA";
+//				saludo.charAt(10);
 		/*	END GestAutExc
 		 * 
 		 */
@@ -99,6 +100,29 @@ public class RestauranteController {
 
 		return responseEntity;
 	}
+	
+	//
+	// GET -> Búsqueda -> Por barrio, por especialidad, por nombre, etc.
+	//
+	
+	// GET acotado por precio: he usado dos tipos de predicado distintos.
+	// GET http://localhost:8081/restaurante/11/19
+	//@GetMapping("/{preciomin}/{preciomax}")
+	//public ResponseEntity<?> consultarPorPrecioAcotado(@PathVariable int preciomin, @PathVariable int preciomax ){
+	
+	// GET http://localhost:8081/restaurante/buscarPorPrecio?preciomin=11&preciomax=19
+	@GetMapping("/buscarPorPrecio")
+	public ResponseEntity<?> consultarPorPrecioAcotado(
+			@RequestParam(name = "preciomin") int preciomin, 
+			@RequestParam(name = "preciomax") int preciomax ){
+		ResponseEntity<?> responseEntity = null;
+		Iterable<Restaurante> iterRest = null;
+		iterRest = this.restauranteService.encuentraPorPrecioAcotado(preciomin, preciomax);
+		responseEntity = ResponseEntity.ok(iterRest);
+		return  responseEntity;
+	}
+	
+
 	// POST -> Insertar un restaurante nuevo. POST  http://localhost:8081/restaurante(Body Restaurante)
 	@PostMapping
 	public ResponseEntity<?> insertarRestaurante(@RequestBody Restaurante restaurante){
@@ -115,7 +139,16 @@ public class RestauranteController {
 	public ResponseEntity<?> modificarRestaurante(
 			@RequestBody Restaurante restaurante, 
 			@PathVariable Long id){
+		
 		ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
+		Optional<Restaurante> opRest = null;
+			opRest = this.restauranteService.modificarRestaurante(id, restaurante);
+			if (opRest.isPresent()) {
+					Restaurante restModificado = opRest.get();
+					responseEntity = ResponseEntity.ok(restModificado);
+			} else {
+				responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+			}
 		return  responseEntity; 
 	}
 	
@@ -131,6 +164,5 @@ public class RestauranteController {
 		return responseEntity;
 	}
 
-	// GET -> Búsqueda -> Por barrio, por especialidad, por nombre, etc.
-
+	
 }
