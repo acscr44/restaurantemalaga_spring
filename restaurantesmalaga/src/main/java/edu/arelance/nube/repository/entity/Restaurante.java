@@ -197,5 +197,15 @@ public class Restaurante {
 	private void generarFechaCreación() {
 		this.creadoEn = LocalDateTime.now(); // obtengo la fecha actual.
 	}
+
+
+	@Override
+	public String toString() {
+		return "Restaurante [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", barrio=" + barrio
+				+ ", web=" + web + ", fichaGoogle=" + fichaGoogle + ", latitud=" + latitud + ", longitud=" + longitud
+				+ ", precio=" + precio + ", especialidad1=" + especialidad1 + ", especialidad2=" + especialidad2
+				+ ", especialidad3=" + especialidad3 + ", creadoEn=" + creadoEn + "]";
+	}
+	
 	
 }

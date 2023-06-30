@@ -47,6 +47,7 @@ public class RestauranteController {
 	@Autowired // Inyección de dependencias
 	RestauranteService restauranteService;
 
+	// Instancia logger de nivel debug
 	Logger logger = LoggerFactory.getLogger(RestauranteController.class);
 		
 	@GetMapping("/test") // GET http://localhost:8081/restaurante/test
@@ -54,6 +55,7 @@ public class RestauranteController {
 		Restaurante restaurante = null;
 
 		System.out.println("Llamando a obtenerRestauranteTest");
+		// logger de nivel debug
 		logger.debug("estoy en obtenerRestauranteTest");
 		restaurante = new Restaurante(1l, "Martinete", "Carlos Haya 33", "Carranque",
 				"https://www.mesonelmartinete.es/", "https://goo.gl/maps/526RFvXpxCkYQ7T69", 36.72f, -4.44f, 10,
@@ -91,18 +93,23 @@ public class RestauranteController {
 		ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
 		Optional<Restaurante> or = null;
 			
+			// logger de nivel debug
+			logger.debug("En listarPorId" + id);
 			or = this.restauranteService.consultarRestaurante(id);
 			if (or.isPresent()){
 				// la consulta ha recuperado un registro
 				// ok == ok response 200
 				Restaurante restauranteLeido = or.get();
 				responseEntity = ResponseEntity.ok().body(restauranteLeido);
+				logger.debug("Recuperado el registro " + restauranteLeido.toString());
 			} else {
 				// la consulta NO ha recuperado ningún registro
 				// noContent == error response 204
 				responseEntity = ResponseEntity.noContent().build();
+				logger.debug("El restaurante con  " + id + " no existe");
 			}
-
+			logger.debug("Saliendo de listarPorId");
+			
 		return responseEntity;
 	}
 	

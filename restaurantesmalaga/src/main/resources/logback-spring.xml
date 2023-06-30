@@ -11,4 +11,6 @@
 	<!-- thresold / umbral -->
 	<logger name="edu.arelance.nube" level="DEBUG"></logger>
 	<!-- <logger name="org.hibernate" level="TRACE"></logger> -->
+	
+	<!-- https://docs.spring.io/spring-boot/docs/2.1.13.RELEASE/reference/html/boot-features-logging.html -->
 </configuration>
