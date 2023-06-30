@@ -1,13 +1,18 @@
 package edu.arelance.nube.controller;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.DeleteMapping;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -83,6 +88,21 @@ public class RestauranteController {
 		return responseEntity;
 	}
 
+	private ResponseEntity<?> generarRespuestaErroresValidacion (BindingResult bindingResult){
+		ResponseEntity<?> responseEntity = null;
+			List<ObjectError> listaErrores = null;
+				listaErrores = bindingResult.getAllErrors();
+				// Hay que dejar constancia de los errores por el log
+				listaErrores.forEach(e -> 
+					logger.error(e.toString())
+						);
+				
+				responseEntity = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(listaErrores);
+			
+		
+		return responseEntity;
+	}
+	
 	// GET -> Consulta de Uno (por ID) GET http://localhost:8081/restaurante/id
 	@Operation(
 			description = "Servicio que recibe la consulta de un restaurante por ID",
@@ -149,30 +169,48 @@ public class RestauranteController {
 	
 
 	// POST -> Insertar un restaurante nuevo. POST  http://localhost:8081/restaurante(Body Restaurante)
+	// Bean Validation: Los métodos POST y PUT sí requieren validación
 	@PostMapping
-	public ResponseEntity<?> insertarRestaurante(@RequestBody Restaurante restaurante){
+	public ResponseEntity<?> insertarRestaurante(@Valid @RequestBody Restaurante restaurante, BindingResult bindingResult){
 		ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
 		Restaurante restauranteNuevo = null;
+			// TODO form validator  @Valid  y BindingResult(informa si ha ido bien o mal)
+		if(bindingResult.hasErrors()) {
+			logger.debug("Errores en la entrada POST");
+			responseEntity = generarRespuestaErroresValidacion(bindingResult);
+		} else {
+			logger.debug("Entrada POST correcta");
 			// Respuesta para un registro correcto: 201
 			restauranteNuevo = this.restauranteService.altaRestaurante(restaurante);
-			responseEntity = ResponseEntity.status(HttpStatus.CREATED).body(restauranteNuevo);
+			responseEntity = ResponseEntity.status(HttpStatus.CREATED).body(restauranteNuevo);			
+		}
 		return  responseEntity; 
 	}
 	
 	// PUT -> Modificar un restaurante existente. PUT   http://localhost:8081/restaurante/id (Body Restaurante)
+	// Bean Validation: Los métodos POST y PUT sí requieren validación
 	@PutMapping("/{id}")
 	public ResponseEntity<?> modificarRestaurante(
-			@RequestBody Restaurante restaurante, 
-			@PathVariable Long id){
+			@Valid @RequestBody Restaurante restaurante, 
+			@PathVariable Long id,
+			BindingResult bindingResult){
 		
 		ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
 		Optional<Restaurante> opRest = null;
-			opRest = this.restauranteService.modificarRestaurante(id, restaurante);
-			if (opRest.isPresent()) {
+		
+			if(bindingResult.hasErrors()) {
+				logger.debug("Errores en la entrada PUT");
+				responseEntity = generarRespuestaErroresValidacion(bindingResult);
+			} else {
+				logger.debug("Entrada POST correcta");
+				opRest = this.restauranteService.modificarRestaurante(id, restaurante);
+				if (opRest.isPresent()) {
 					Restaurante restModificado = opRest.get();
 					responseEntity = ResponseEntity.ok(restModificado);
-			} else {
-				responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+				} else {
+					responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+				}
+				
 			}
 		return  responseEntity; 
 	}

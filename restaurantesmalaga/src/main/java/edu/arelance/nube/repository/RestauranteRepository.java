@@ -39,6 +39,7 @@ public interface RestauranteRepository extends CrudRepository<Restaurante, Long>
 	Iterable<Restaurante> buscarPorBarrioNombreOrEspecialidad(String clave);
 
 	
-	
+	// paginación spring boot
+	// https://refactorizando.com/paginacion-ordenacion-spring-data/
 	
 }

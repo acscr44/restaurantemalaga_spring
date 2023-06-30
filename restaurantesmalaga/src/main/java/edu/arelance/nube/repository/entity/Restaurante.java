@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;		// Librerías javax (estandar)
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "restaurantes", schema = "bdrestaurantes")
@@ -17,17 +20,22 @@ public class Restaurante {
 	@Id  // Indica a Spring que este atributo será la clave primaria.
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // autoInc en MySQL
 	private Long id;
-	
-	private String nombre;
-	private String direccion;
-	private String barrio;
+	@NotEmpty
+	private String nombre;  // validación obligatoria
+	@NotEmpty
+	private String direccion;  // validación obligatoria
+	@NotEmpty
+	private String barrio;  // validación obligatoria
 	private String web;
 	private String fichaGoogle;
 	
 	private Float latitud;
 	private Float longitud;
-	
-	private Integer precio;
+	// Validation Form Input (Bean Validation)
+	// https://spring.io/guides/gs/validating-form-input/
+	@Min(value = 2)
+	@Max(500)
+	private Integer precio;  // validación obligatoria
 	
 	private String especialidad1;
 	private String especialidad2;
