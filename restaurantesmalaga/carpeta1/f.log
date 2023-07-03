@@ -642,3 +642,297 @@ Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (
 2023-06-30 12:50:29.192  INFO 3676 --- [RMI TCP Connection(59)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-06-30 12:50:29.193  INFO 3676 --- [RMI TCP Connection(59)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2023-06-30 12:50:29.198  INFO 3676 --- [RMI TCP Connection(59)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-07-03 10:08:34.431  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:08:34.435 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:08:34.435  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:08:35.544  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:08:35.581  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:08:35.936  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:08:35.942  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:08:35.943  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:08:35.972  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:08:35.973  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1512 ms
+2023-07-03 10:08:36.054  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:08:36.097  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-07-03 10:08:36.218  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-07-03 10:08:36.222  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:08:36.586  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:08:36.589  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:08:37.034  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:08:37.632  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:08:37.749  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:08:37.771  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 4.369 seconds (JVM running for 77830.265)
+2023-07-03 10:08:37.793  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:09:45.533  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2023-07-03 10:09:45.579  INFO 4120 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:09:45.620  INFO 4120 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:09:45.628  INFO 4120 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-07-03 10:09:45.682  INFO 4120 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-07-03 10:09:46.501  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:09:46.502 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:09:46.503  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:09:47.452  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:09:47.474  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:09:47.850  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:09:47.852  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:09:47.855  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:09:47.878  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:09:47.879  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1362 ms
+2023-07-03 10:09:48.008  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:09:48.019  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-07-03 10:09:48.057  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-07-03 10:09:48.058  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:09:48.252  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:09:48.253  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:09:48.625  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:09:49.029  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:09:49.069  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:09:49.087  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 2.709 seconds (JVM running for 77901.581)
+2023-07-03 10:09:49.095  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:10:26.503  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-07-03 10:10:26.507  INFO 4120 --- [Thread-26] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:10:26.514  INFO 4120 --- [Thread-26] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:10:26.516  INFO 4120 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-07-03 10:10:26.523  INFO 4120 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-07-03 10:10:26.679  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:10:26.679 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:10:26.679  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:10:26.911  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:10:26.921  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:10:27.134  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:10:27.135  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:10:27.135  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:10:27.145  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:10:27.146  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 464 ms
+2023-07-03 10:10:27.210  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:10:27.218  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-07-03 10:10:27.239  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-07-03 10:10:27.240  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:10:27.315  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:10:27.316  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:10:27.471  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:10:27.688  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:10:27.712  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:10:27.719  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 1.085 seconds (JVM running for 77940.213)
+2023-07-03 10:10:27.721  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:10:38.102  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-07-03 10:10:38.106  INFO 4120 --- [Thread-30] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:10:38.115  INFO 4120 --- [Thread-30] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:10:38.116  INFO 4120 --- [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-07-03 10:10:38.131  INFO 4120 --- [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-07-03 10:10:38.433  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:10:38.434 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:10:38.434  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:10:39.098  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:10:39.109  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:10:39.263  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:10:39.264  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:10:39.265  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:10:39.279  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:10:39.279  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 843 ms
+2023-07-03 10:10:39.340  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:10:39.346  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2023-07-03 10:10:39.366  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2023-07-03 10:10:39.367  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:10:39.454  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:10:39.455  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:10:39.956  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:10:40.339  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:10:40.377  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:10:40.397  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 2.087 seconds (JVM running for 77952.891)
+2023-07-03 10:10:40.402  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:10:59.767  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-07-03 10:10:59.772  INFO 4120 --- [Thread-34] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:10:59.777  INFO 4120 --- [Thread-34] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:10:59.778  INFO 4120 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2023-07-03 10:10:59.795  INFO 4120 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2023-07-03 10:11:00.031  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:11:00.031 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:11:00.032  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:11:00.562  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:11:00.574  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:11:00.825  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:11:00.826  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:11:00.827  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:11:00.846  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:11:00.846  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 799 ms
+2023-07-03 10:11:00.929  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:11:00.935  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2023-07-03 10:11:00.954  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2023-07-03 10:11:00.955  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:11:01.010  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:11:01.011  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:11:01.155  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:11:01.346  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:11:01.387  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:11:01.402  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 1.456 seconds (JVM running for 77973.896)
+2023-07-03 10:11:01.411  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:11:07.759  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-07-03 10:11:07.766  INFO 4120 --- [Thread-38] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:11:07.783  INFO 4120 --- [Thread-38] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:11:07.786  INFO 4120 --- [Thread-38] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2023-07-03 10:11:07.805  INFO 4120 --- [Thread-38] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2023-07-03 10:11:08.109  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:11:08.109 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:11:08.109  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:11:08.683  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:11:08.700  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:11:08.927  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:11:08.930  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:11:08.931  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:11:08.960  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:11:08.960  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 848 ms
+2023-07-03 10:11:09.097  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:11:09.106  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2023-07-03 10:11:09.131  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2023-07-03 10:11:09.132  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:11:09.230  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:11:09.230  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:11:09.385  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:11:09.557  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:11:09.577  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:11:09.589  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 1.61 seconds (JVM running for 77982.083)
+2023-07-03 10:11:09.591  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:12:12.027  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2023-07-03 10:12:12.031  INFO 4120 --- [Thread-42] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:12:12.038  INFO 4120 --- [Thread-42] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:12:12.039  INFO 4120 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2023-07-03 10:12:12.044  INFO 4120 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2023-07-03 10:12:12.146  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:12:12.147 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:12:12.147  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:12:12.534  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:12:12.558  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:12:12.787  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:12:12.788  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:12:12.789  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:12:12.805  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:12:12.806  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 657 ms
+2023-07-03 10:12:12.907  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:12:12.919  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2023-07-03 10:12:12.948  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2023-07-03 10:12:12.948  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:12:13.037  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:12:13.039  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:12:13.269  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:12:13.635  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:12:13.661  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:12:13.676  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 1.559 seconds (JVM running for 78046.17)
+2023-07-03 10:12:13.678  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:13:00.102  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-07-03 10:13:00.122  INFO 4120 --- [Thread-46] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:13:00.145  INFO 4120 --- [Thread-46] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:13:00.154  INFO 4120 --- [Thread-46] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2023-07-03 10:13:00.186  INFO 4120 --- [Thread-46] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2023-07-03 10:13:00.519  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:13:00.519 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:13:00.520  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:13:01.087  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:13:01.108  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:13:01.504  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:13:01.509  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:13:01.510  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:13:01.528  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:13:01.528  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1004 ms
+2023-07-03 10:13:01.638  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:13:01.649  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2023-07-03 10:13:01.681  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2023-07-03 10:13:01.682  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:13:01.814  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:13:01.815  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:13:02.088  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:13:02.297  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:13:02.323  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:13:02.336  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 1.928 seconds (JVM running for 78094.83)
+2023-07-03 10:13:02.339  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:15:29.873  INFO 4120 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-07-03 10:15:29.876  INFO 4120 --- [Thread-50] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:15:29.882  INFO 4120 --- [Thread-50] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:15:29.883  INFO 4120 --- [Thread-50] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2023-07-03 10:15:29.890  INFO 4120 --- [Thread-50] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2023-07-03 10:15:30.044  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4120 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:15:30.045 DEBUG 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:15:30.045  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:15:30.393  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:15:30.399  INFO 4120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:15:30.565  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:15:30.566  INFO 4120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:15:30.567  INFO 4120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:15:30.589  INFO 4120 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:15:30.590  INFO 4120 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 542 ms
+2023-07-03 10:15:30.648  INFO 4120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:15:30.656  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2023-07-03 10:15:30.684  INFO 4120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2023-07-03 10:15:30.684  INFO 4120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:15:30.736  INFO 4120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:15:30.737  INFO 4120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:15:30.891  WARN 4120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:15:31.106  INFO 4120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:15:31.124  INFO 4120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:15:31.131  INFO 4120 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 1.15 seconds (JVM running for 78243.625)
+2023-07-03 10:15:31.134  INFO 4120 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-03 10:16:29.017  INFO 4120 --- [RMI TCP Connection(1364)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-07-03 10:16:29.021  INFO 4120 --- [RMI TCP Connection(1364)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:16:29.055  INFO 4120 --- [RMI TCP Connection(1364)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:16:29.056  INFO 4120 --- [RMI TCP Connection(1364)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2023-07-03 10:16:29.089  INFO 4120 --- [RMI TCP Connection(1364)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2023-07-03 10:16:34.142  INFO 4196 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 4196 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 10:16:34.144 DEBUG 4196 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 10:16:34.146  INFO 4196 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 10:16:34.433  INFO 4196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-03 10:16:34.434  INFO 4196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-03 10:16:38.016  INFO 4196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 10:16:38.181  INFO 4196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 1 JPA repository interfaces.
+2023-07-03 10:16:40.530  INFO 4196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 10:16:40.548  INFO 4196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 10:16:40.549  INFO 4196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 10:16:40.706  INFO 4196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-03 10:16:40.707  INFO 4196 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6272 ms
+2023-07-03 10:16:41.203  INFO 4196 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 10:16:41.381  INFO 4196 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-03 10:16:41.854  INFO 4196 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-03 10:16:42.119  INFO 4196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-03 10:16:43.413  INFO 4196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-03 10:16:43.473  INFO 4196 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 10:16:45.545  INFO 4196 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 10:16:45.564  INFO 4196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:16:46.968  WARN 4196 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 10:16:48.342  INFO 4196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 10:16:48.509  INFO 4196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 10:16:48.544  INFO 4196 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 16.451 seconds (JVM running for 18.311)
+2023-07-03 10:17:07.510  INFO 4196 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 10:17:07.511  INFO 4196 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-03 10:17:07.516  INFO 4196 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-07-03 10:39:57.977  INFO 4196 --- [RMI TCP Connection(36)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-07-03 10:39:58.004  INFO 4196 --- [RMI TCP Connection(36)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-03 10:39:58.015  INFO 4196 --- [RMI TCP Connection(36)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-03 10:39:58.069  INFO 4196 --- [RMI TCP Connection(36)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 10:39:58.097  INFO 4196 --- [RMI TCP Connection(36)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-07-03 10:39:58.181  INFO 4196 --- [RMI TCP Connection(36)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-07-03 12:13:34.917  INFO 8992 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Starting RestaurantesmalagaApplication using Java 17.0.7 on DESKTOP-NPAVUJP with PID 8992 (/home/aecc/git/restaurantemalaga_spring/restaurantesmalaga/target/classes started by aecc in /home/aecc/git/restaurantemalaga_spring/restaurantesmalaga)
+2023-07-03 12:13:34.919 DEBUG 8992 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-03 12:13:34.920  INFO 8992 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-03 12:13:35.085  INFO 8992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-03 12:13:35.085  INFO 8992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-03 12:13:37.107  INFO 8992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 12:13:37.222  INFO 8992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 1 JPA repository interfaces.
+2023-07-03 12:13:38.504  INFO 8992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-07-03 12:13:38.524  INFO 8992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-03 12:13:38.525  INFO 8992 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-03 12:13:38.709  INFO 8992 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-03 12:13:38.710  INFO 8992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3623 ms
+2023-07-03 12:13:39.042  INFO 8992 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-03 12:13:39.157  INFO 8992 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-03 12:13:39.510  INFO 8992 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-03 12:13:39.761  INFO 8992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-03 12:13:40.528  INFO 8992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-03 12:13:40.571  INFO 8992 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-03 12:13:42.284  INFO 8992 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-03 12:13:42.305  INFO 8992 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 12:13:43.251  WARN 8992 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 12:13:44.129  INFO 8992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-03 12:13:44.228  INFO 8992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-07-03 12:13:44.251  INFO 8992 --- [restartedMain] e.a.nube.RestaurantesmalagaApplication   : Started RestaurantesmalagaApplication in 10.812 seconds (JVM running for 13.041)
+2023-07-03 12:14:00.691  INFO 8992 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 12:14:00.691  INFO 8992 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-03 12:14:00.695  INFO 8992 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms

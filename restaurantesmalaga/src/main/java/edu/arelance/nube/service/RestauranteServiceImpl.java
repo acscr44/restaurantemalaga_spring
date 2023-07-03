@@ -101,4 +101,15 @@ public class RestauranteServiceImpl implements RestauranteService {
 		return listaByAnyCriteria;
 	}
 	
+	
+	
+	@Override
+    @Transactional(readOnly = true)
+    public List<String> obtenerTodosLosBarrios() {
+        List<String> listaBarrios = null;
+        listaBarrios = this.restauranteRepository.cuantosBarriosHay();
+
+        return listaBarrios;
+    }
+	
 }

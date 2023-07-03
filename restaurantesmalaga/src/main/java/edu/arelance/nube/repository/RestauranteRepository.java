@@ -1,5 +1,7 @@
 package edu.arelance.nube.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -42,4 +44,7 @@ public interface RestauranteRepository extends CrudRepository<Restaurante, Long>
 	// paginación spring boot
 	// https://refactorizando.com/paginacion-ordenacion-spring-data/
 	
+	
+	@Query(value = "SELECT DISTINCT barrio from restaurantes", nativeQuery = true)
+    List<String> cuantosBarriosHay();
 }

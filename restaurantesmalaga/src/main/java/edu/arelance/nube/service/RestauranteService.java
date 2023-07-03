@@ -1,6 +1,7 @@
 package edu.arelance.nube.service;
 
 
+import java.util.List;
 import java.util.Optional;
 
 import edu.arelance.nube.repository.entity.Restaurante;
@@ -25,6 +26,8 @@ public interface RestauranteService{
 	Iterable<Restaurante> encuentraPorPrecioAcotado(int preciomin, int preciomax);
 	
 	Iterable<Restaurante> listarPorAlgunCriterioMultiple(String clave);
+
+	List<String> obtenerTodosLosBarrios();
 	
 	
 }
