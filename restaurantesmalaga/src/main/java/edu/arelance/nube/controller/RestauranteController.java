@@ -9,10 +9,12 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +23,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.arelance.nube.dto.FraseChuckNorris;
 import edu.arelance.nube.repository.entity.Restaurante;
 import edu.arelance.nube.service.RestauranteService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -44,6 +48,7 @@ import io.swagger.v3.oas.annotations.Operation;
  */
 
 //@Controller //Devolvemos una vista  (html/jsp)
+@CrossOrigin(originPatterns = {"*"}, methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})
 @RestController // Devolvemos JSON // Subtipo de @Controller
 @RequestMapping("/restaurante") // Para mejor orientación de Spring, le indicamos que todo lo que va a dicha URL
 								// es para esta clase Controller (restaurantesmalaga)
@@ -51,6 +56,10 @@ public class RestauranteController {
 
 	@Autowired // Inyección de dependencias
 	RestauranteService restauranteService;
+	
+	@Autowired
+	Environment environment;  // de aquí obtenemos la informacioón del puerto. 
+	
 
 	// Instancia logger de nivel debug
 	Logger logger = LoggerFactory.getLogger(RestauranteController.class);
@@ -82,6 +91,7 @@ public class RestauranteController {
 		/*	END GestAutExc
 		 * 
 		 */
+		logger.debug("ATENDIDO POR EL PUERTO " + environment.getProperty("local.server.port"));
 			lista_Restaurantes = this.restauranteService.consultarTodos();
 			responseEntity = ResponseEntity.ok(lista_Restaurantes);
 
@@ -192,8 +202,8 @@ public class RestauranteController {
 	@PutMapping("/{id}")
 	public ResponseEntity<?> modificarRestaurante(
 			@Valid @RequestBody Restaurante restaurante, 
-			@PathVariable Long id,
-			BindingResult bindingResult){
+			BindingResult bindingResult,
+			@PathVariable Long id){
 		
 		ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
 		Optional<Restaurante> opRest = null;
@@ -242,6 +252,27 @@ public class RestauranteController {
         return responseEntity;
     }
     
+    /**
+     * Obtener una frase aleatoria de Chuck Norris
+     * Metodo GET a http://localhost:8081/restaurante/frasechuck
+     * @return
+     */
+    // 
+    @GetMapping("/frasechuck")
+    public ResponseEntity<?> obtenerFraseChuck(){
+    	ResponseEntity<?> responseEntity = null;
+    	Optional<FraseChuckNorris> obFraseAleaChuck = null;
+    		
+    		obFraseAleaChuck = this.restauranteService.obtenerFraseAleatorioChuckNorris();
+    		if (obFraseAleaChuck.isPresent()) {
+    			FraseChuckNorris frase = obFraseAleaChuck.get();
+    			logger.debug("Frase recibida");
+    			responseEntity = ResponseEntity.ok(frase);    			
+    		} else {
+    			responseEntity = ResponseEntity.noContent().build();
+    		}
+	    return responseEntity;
+    }
     
     
     

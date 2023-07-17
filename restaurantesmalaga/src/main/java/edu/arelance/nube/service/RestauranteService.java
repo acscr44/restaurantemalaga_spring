@@ -4,6 +4,7 @@ package edu.arelance.nube.service;
 import java.util.List;
 import java.util.Optional;
 
+import edu.arelance.nube.dto.FraseChuckNorris;
 import edu.arelance.nube.repository.entity.Restaurante;
 
 public interface RestauranteService{
@@ -29,5 +30,5 @@ public interface RestauranteService{
 
 	List<String> obtenerTodosLosBarrios();
 	
-	
+	Optional<FraseChuckNorris> obtenerFraseAleatorioChuckNorris();
 }
