@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;		// Librerías javax (estandar)
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "restaurantes", schema = "bdrestaurantes")
@@ -44,7 +47,20 @@ public class Restaurante {
 	@Column (name="creado_en")
 	private LocalDateTime creadoEn;
 	
+	@Lob
+	@JsonIgnore // no queremos que este atributo vaya en el JSON de restaurante
+	private byte[] foto;
 	
+	public Integer getFotoHashCode () {
+		Integer idev = null;
+			
+			if (this.foto != null)
+			{
+				idev = this.foto.hashCode();
+			}
+			
+		return idev;
+	}
 
 
 	public Restaurante(Long id, String nombre, String direccion, String barrio, String web, String fichaGoogle,
@@ -204,6 +220,16 @@ public class Restaurante {
 	@PrePersist // este método, marcado así, se ejecuta antes de insertar el restauranta/objeto en la tabla.
 	private void generarFechaCreación() {
 		this.creadoEn = LocalDateTime.now(); // obtengo la fecha actual.
+	}
+
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
 	}
 
 

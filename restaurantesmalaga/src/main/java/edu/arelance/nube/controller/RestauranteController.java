@@ -1,5 +1,6 @@
 package edu.arelance.nube.controller;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -26,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import edu.arelance.nube.dto.FraseChuckNorris;
 import edu.arelance.nube.repository.entity.Restaurante;
@@ -276,10 +281,71 @@ public class RestauranteController {
     
     
     
+	// POST -> Insertar un restaurante nuevo con foto. POST  http://localhost:8081/restaurante/crear-con-foto (Body Restaurante)
+	// Bean Validation: Los métodos POST y PUT sí requieren validación
+	@PostMapping("/crear-con-foto")
+	public ResponseEntity<?> insertarRestauranteConFoto  (@Valid Restaurante restaurante, BindingResult bindingResult, MultipartFile archivo) throws IOException{
+		ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
+		Restaurante restauranteNuevo = null;
+			// TODO form validator  @Valid  y BindingResult(informa si ha ido bien o mal)
+		if(bindingResult.hasErrors()) {
+			logger.debug("Errores en la entrada POST");
+			responseEntity = generarRespuestaErroresValidacion(bindingResult);
+		} else {
+			logger.debug("Entrada POST correcta");
+			if(!archivo.isEmpty())
+			{
+				logger.debug("El restaurante trae foto");
+				try {
+					restaurante.setFoto(archivo.getBytes());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					logger.error("Error al tratar la foto", e);
+					logger.debug("Error al tratar la foto", e);
+					e.printStackTrace();
+					throw e;
+				}
+			}
+			// Respuesta para un registro correcto: 201
+			restauranteNuevo = this.restauranteService.altaRestaurante(restaurante);
+			responseEntity = ResponseEntity.status(HttpStatus.CREATED).body(restauranteNuevo);			
+		}
+		return  responseEntity; 
+	}
     
     
     
-    
+	// GET -> Consulta de Uno (por ID) GET http://localhost:8081/restaurante/obtenerFoto/id
+		@Operation(
+				description = "Servicio que recibe la foto de un restaurante por ID",
+				summary = "esquema"
+				)
+		@GetMapping("/obtenerFoto/{id}")
+		public ResponseEntity<?> obtenerFotoRestaurante(@PathVariable Long id) {
+			ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
+			Optional<Restaurante> or = null;
+			Resource imagen = null; // esto representa el archivo (imagen)
+				
+				// logger de nivel debug
+				logger.debug("En obtenerFotoRestaurante" + id);
+				or = this.restauranteService.consultarRestaurante(id);
+				if (or.isPresent()&& or.get().getFoto()!=null){
+					// la consulta ha recuperado un registro
+					// ok == ok response 200
+					Restaurante restauranteLeido = or.get();
+					imagen = new ByteArrayResource(restauranteLeido.getFoto());
+					responseEntity = ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen);
+					logger.debug("Recuperado el registro " + restauranteLeido.toString());
+				} else {
+					// la consulta NO ha recuperado ningún registro
+					// noContent == error response 204
+					responseEntity = ResponseEntity.noContent().build();
+					logger.debug("El restaurante con  " + id + " no existe o no tiene foto");
+				}
+				logger.debug("Saliendo de obtenerFotoRestaurante");
+				
+			return responseEntity;
+		}
     
     
     
