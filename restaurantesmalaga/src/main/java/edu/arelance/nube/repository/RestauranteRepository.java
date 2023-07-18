@@ -2,14 +2,18 @@ package edu.arelance.nube.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+//import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import edu.arelance.nube.repository.entity.Restaurante;
 
 @Repository
-public interface RestauranteRepository extends CrudRepository<Restaurante, Long>{
+//public interface RestauranteRepository extends CrudRepository<Restaurante, Long>{
+public interface RestauranteRepository extends PagingAndSortingRepository<Restaurante, Long>{
 	// Hemos heredado todas la operaciones que tiene CrudRepository
 	// https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html
 
@@ -27,6 +31,7 @@ public interface RestauranteRepository extends CrudRepository<Restaurante, Long>
 	// 1 KEY WORD QUERIES
 	// Obtener restaurantes en un rango de precio
 	Iterable<Restaurante> findByPrecioBetween(int preciomin, int preciomax);
+	Page<Restaurante> findByPrecioBetween(int preciomin, int preciomax, Pageable pageable);
 
 
 	// 3 NATIVAS - SQL

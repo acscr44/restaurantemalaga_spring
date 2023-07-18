@@ -4,6 +4,9 @@ package edu.arelance.nube.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import edu.arelance.nube.dto.FraseChuckNorris;
 import edu.arelance.nube.repository.entity.Restaurante;
 
@@ -25,10 +28,14 @@ public interface RestauranteService{
 	Optional<Restaurante> modificarRestaurante(Long id, Restaurante restaurante);
 
 	Iterable<Restaurante> encuentraPorPrecioAcotado(int preciomin, int preciomax);
+	Iterable<Restaurante> encuentraPorPrecioAcotado(int preciomin, int preciomax, Pageable pageable);
 	
 	Iterable<Restaurante> listarPorAlgunCriterioMultiple(String clave);
 
 	List<String> obtenerTodosLosBarrios();
 	
 	Optional<FraseChuckNorris> obtenerFraseAleatorioChuckNorris();
+	
+	Page<Restaurante> consultarPorPagina (Pageable pageable);
+
 }

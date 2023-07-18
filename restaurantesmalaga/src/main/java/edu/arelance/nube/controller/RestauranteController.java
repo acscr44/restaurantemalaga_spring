@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -169,6 +170,22 @@ public class RestauranteController {
 		return  responseEntity;
 	}
 	
+	
+	// GET http://localhost:8081/restaurante/buscarPorPrecioPaginado?preciomin=11&preciomax=19&page=0&size=3
+		@GetMapping("/buscarPorPrecioPaginado")
+		public ResponseEntity<?> listarPorRangoPrecioPaginado(
+				@RequestParam(name = "preciomin") int preciomin, 
+				@RequestParam(name = "preciomax") int preciomax ,
+				Pageable pageable)
+		{
+			ResponseEntity<?> responseEntity = null;
+			Iterable<Restaurante> iterRest = null;
+			iterRest = this.restauranteService.encuentraPorPrecioAcotado(preciomin, preciomax, pageable);
+			responseEntity = ResponseEntity.ok(iterRest);
+			return  responseEntity;
+		}
+		
+		
 	// GET 
 	@GetMapping("/searchByAny")
 	public ResponseEntity<?> listarPorAlgunCriterioMultiple(
@@ -284,33 +301,37 @@ public class RestauranteController {
 	// POST -> Insertar un restaurante nuevo con foto. POST  http://localhost:8081/restaurante/crear-con-foto (Body Restaurante)
 	// Bean Validation: Los métodos POST y PUT sí requieren validación
 	@PostMapping("/crear-con-foto")
-	public ResponseEntity<?> insertarRestauranteConFoto  (@Valid Restaurante restaurante, BindingResult bindingResult, MultipartFile archivo) throws IOException{
-		ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
-		Restaurante restauranteNuevo = null;
-			// TODO form validator  @Valid  y BindingResult(informa si ha ido bien o mal)
-		if(bindingResult.hasErrors()) {
-			logger.debug("Errores en la entrada POST");
-			responseEntity = generarRespuestaErroresValidacion(bindingResult);
-		} else {
-			logger.debug("Entrada POST correcta");
-			if(!archivo.isEmpty())
-			{
-				logger.debug("El restaurante trae foto");
-				try {
-					restaurante.setFoto(archivo.getBytes());
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					logger.error("Error al tratar la foto", e);
-					logger.debug("Error al tratar la foto", e);
-					e.printStackTrace();
-					throw e;
+	public ResponseEntity<?> insertarRestauranteConFoto  (
+			@Valid Restaurante restaurante, 
+			BindingResult bindingResult, 
+			MultipartFile archivo) throws IOException{
+		
+			ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
+			Restaurante restauranteNuevo = null;
+				// TODO form validator  @Valid  y BindingResult(informa si ha ido bien o mal)
+			if(bindingResult.hasErrors()) {
+				logger.debug("Errores en la entrada POST");
+				responseEntity = generarRespuestaErroresValidacion(bindingResult);
+			} else {
+				logger.debug("Entrada POST correcta");
+				if(!archivo.isEmpty())
+				{
+					logger.debug("El restaurante trae foto");
+					try {
+						restaurante.setFoto(archivo.getBytes());
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						logger.error("Error al tratar la foto", e);
+						logger.debug("Error al tratar la foto", e);
+						e.printStackTrace();
+						throw e;
+					}
 				}
+				// Respuesta para un registro correcto: 201
+				restauranteNuevo = this.restauranteService.altaRestaurante(restaurante);
+				responseEntity = ResponseEntity.status(HttpStatus.CREATED).body(restauranteNuevo);			
 			}
-			// Respuesta para un registro correcto: 201
-			restauranteNuevo = this.restauranteService.altaRestaurante(restaurante);
-			responseEntity = ResponseEntity.status(HttpStatus.CREATED).body(restauranteNuevo);			
-		}
-		return  responseEntity; 
+			return  responseEntity; 
 	}
     
     
@@ -347,8 +368,56 @@ public class RestauranteController {
 			return responseEntity;
 		}
     
+		// PUT -> Modificar un restaurante existente. PUT   http://localhost:8081/restaurante/editar-con-foto/id (Body Restaurante)
+		// Bean Validation: Los métodos POST y PUT sí requieren validación
+		@PutMapping("/editar-con-foto/{id}")
+		public ResponseEntity<?> modificarRestauranteConFoto(
+				@Valid Restaurante restaurante,
+				BindingResult bindingResult,	// Resultado de la carga, nos informa si ha habido algún problema con la carga del objeto JSON Restaurante recibido.
+				MultipartFile archivo,
+				@PathVariable Long id) throws IOException{
+			
+			ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
+			Optional<Restaurante> opRest = null;
+			
+				if(bindingResult.hasErrors()) {
+					logger.debug("Errores en la entrada PUT");
+					responseEntity = generarRespuestaErroresValidacion(bindingResult);
+				} else {
+					logger.debug("Entrada PUT correcta");
+					if(!archivo.isEmpty()) {
+						try {
+							restaurante.setFoto(archivo.getBytes());
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+							logger.error("Error al tratar la foto ", e);		// Registra el error
+							throw e;		// Y lo propaga
+						}	// Hasta que incluyamos el Try/Catch el método getBytes() devuelve una excepción de las que hay que controlar (checked)
+					}
+					opRest = this.restauranteService.modificarRestaurante(id, restaurante);
+					if (opRest.isPresent()) {
+						Restaurante restModificado = opRest.get();
+						responseEntity = ResponseEntity.ok(restModificado);
+					} else {
+						responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+					}
+					
+				}
+			return  responseEntity; 
+		}
     
-    
+		// GET -> Consulta de TODOS GET http://localhost:8081/restaurante/pagina?page=0&size=2
+		@GetMapping("/pagina")
+		public ResponseEntity<?> obtenerRestaurantePorPagina(Pageable pageable) {
+			ResponseEntity<?> responseEntity = null; // responseEntity representa el Header y Body de una petición HTTP
+			Iterable<Restaurante> pagina_Restaurantes = null;
+				
+				pagina_Restaurantes = this.restauranteService.consultarPorPagina(pageable);
+				responseEntity = ResponseEntity.ok(pagina_Restaurantes);
+
+			return responseEntity;
+		}
     
     
 }

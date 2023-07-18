@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
@@ -93,6 +95,15 @@ public class RestauranteServiceImpl implements RestauranteService {
 //		return listaRestPrecioAcotado;
 		return this.restauranteRepository.findByPrecioBetween(preciomin, preciomax);
 	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Restaurante> encuentraPorPrecioAcotado(int preciomin, int preciomax, Pageable pageable){
+//		Iterable<Restaurante> listaRestPrecioAcotado = this.restauranteRepository.findByPrecioBetween(preciomin, preciomax);
+//		
+//		return listaRestPrecioAcotado;
+		return this.restauranteRepository.findByPrecioBetween(preciomin, preciomax, pageable);
+	}
 
 	@Override
 	@Transactional(readOnly = true)
@@ -125,6 +136,13 @@ public class RestauranteServiceImpl implements RestauranteService {
 			opChuck = Optional.of(fraseChuckNorris);
 		
 		return opChuck;
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Restaurante> consultarPorPagina(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return this.restauranteRepository.findAll(pageable);
 	}
 	
 }
