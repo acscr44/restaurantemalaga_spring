@@ -53,8 +53,12 @@ import io.swagger.v3.oas.annotations.Operation;
  * 
  */
 
+/**
+ * SIGNIFICADO de la CLASE --> FECHA - VERSIÓN - AUTO - COMENTAR LA CLASE
+ * @author ALEJANDRO
+ */
 //@Controller //Devolvemos una vista  (html/jsp)
-@CrossOrigin(originPatterns = {"*"}, methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})
+@CrossOrigin(originPatterns = {"*"}, methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RestController // Devolvemos JSON // Subtipo de @Controller
 @RequestMapping("/restaurante") // Para mejor orientación de Spring, le indicamos que todo lo que va a dicha URL
 								// es para esta clase Controller (restaurantesmalaga)
@@ -83,7 +87,13 @@ public class RestauranteController {
 
 		return restaurante;
 	}
-
+	
+	/**
+	 * ENTRADAS - SALIDAS - FUNCIONALIDAD - PRECONDICIONES Y POSTCONDICIONES
+	 * @param e
+	 * @return ResponseEntity
+	 * 
+	 */
 	// GET -> Consulta de TODOS GET http://localhost:8081/restaurante
 	@GetMapping
 	public ResponseEntity<?> listarTodos() {
