@@ -1,0 +1,89 @@
+instalar bootstrap:
+
+npm i bootstrap jquery popper.js
+
+add en anguolar json esto
+
+ "styles": [
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.slim.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+            
+            
+            //en la sección build y en la test
+            
+            
+            
+            hemos creado 3 carpetas components models y services debajo de app
+            
+            y hemos creado 3 componentes
+            
+            ng g c components/adivina
+            ng g c components/perro
+            ng g c components/dni
+
+
+============================
+
+
+Web de la que haremos llamadas a su api:
+https://dog.ceo/dog-api/
+
+
+
+Curso angular
+https://www.angelmata.com/cursonube/dia3/angular_01.mp4
+
+
+Cd-Timer
+http://angular-cd-timer.clemdesign.fr/
+
+
+Testing Framework BDD 
+https://jasmine.github.io/
+
+
+Calculo DNI dígito de control
+https://www.interior.gob.es/opencms/es/servicios-al-ciudadano/tramites-y-gestiones/dni/calculo-del-digito-de-control-del-nif-nie/
+
+
+Extensiones Lorena
+Snapcode
+MySQL
+ESLint
+Black Panther Theme (Luengo)
+Console Ninja
+
+Funciones flecha:
+https://ed.team/blog/arrow-functions-en-javascript
+
+
+
+
+
+APIs para consumir datos:
+https://dog.ceo/dog-api/
+https://placekitten.com/
+https://jsonplaceholder.typicode.com/
+https://rickandmortyapi.com/
+http://superheroapi.com/
+https://pixabay.com/api/docs/
+https://developer.accuweather.com/
+https://pokeapi.co/
+https://www.resultados-futbol.com/api/documentacion
+https://www.themoviedb.org/
+http://www.omdbapi.com/
+https://newsapi.org/
+https://swapi.dev/api (( STAR WARS))
+https://itunes.apple.com/search/?media=music&term=
+https://openweathermap.org/api
+https://developers.google.com/maps/documentation/places/web-service/overview (places)
+https://datos.madrid.es/portal/site/egob/menuitem.214413fe61bdd68a53318ba0a8a409a0/?vgnextoid=b07e0f7c5ff9e510VgnVCM1000008a4a900aRCRD&vgnextchannel=b07e0f7c5ff9e510VgnVCM1000008a4a900aRCRD&vgnextfmt=default (api REST MADRID)
+https://api.chucknorris.io/
+https://opendata.aemet.es/dist/index.html
+https://breakingbadapi.com/
