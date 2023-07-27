@@ -2,9 +2,13 @@ package edu.arelance.nube;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
+@Controller
 //@EnableEurekaClient  // Activamos el cliente eureka
 public class RestaurantesmalagaApplication {
 	/**
@@ -22,4 +26,12 @@ public class RestaurantesmalagaApplication {
 		SpringApplication.run(RestaurantesmalagaApplication.class, args);
 	}
 
+	@RequestMapping(value = "{path:[^\\.]*}", method = RequestMethod.GET)
+    public String redirect() {
+        return "forward:/";
+    }
 }
+
+
+
+
